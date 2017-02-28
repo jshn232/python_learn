@@ -5,4 +5,7 @@
 - 字符串  
 用引号包括起来的任何字符   例如：`'abc'`,`"abcd"`;   
 转义字符`\`，例如`\n`, `"I\'m \'OK\'"` 表示 `I'm 'OK'`   
-`print('hello python world')`
+`print('hello python world')`    
+其中`r''`中的任何字符都不转义    
+- 布尔运算    
+`and`,`or`,`not`    
