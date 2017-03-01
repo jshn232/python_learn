@@ -14,11 +14,8 @@ len(classmate)
 
 - `pop()`    
 删除list末尾的元素    
-
 赋值可直接替换其中的元素    
-
 list中的元素类型可以不同    
-
 list可以包含list，形成多维数组    
 
 
