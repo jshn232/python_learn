@@ -5,5 +5,7 @@ for x in ...
 
 - while循环    
 
+- break    
 
+- continue
 
