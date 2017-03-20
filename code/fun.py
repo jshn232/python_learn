@@ -30,3 +30,8 @@ def fun(*number):
     return sum
 
 print(fun(1,2,3,4,5,6,7,8))
+
+lll = [1, 2, 3, 4, 5, 6, 7]
+print(fun(*lll))
+
+print(fun())
