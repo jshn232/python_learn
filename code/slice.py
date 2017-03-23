@@ -9,3 +9,9 @@ L2 = list(range(10))
 
 print(L2[-3:])
 
+print(L2[:])
+
+
+print(tuple(range(20))[:])
+
+print(tuple(range(20))[2::3])
