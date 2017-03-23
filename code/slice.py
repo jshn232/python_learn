@@ -4,3 +4,8 @@ L = ['slice1','slice2','slice3','slice4','slice5']
 
 print(L[0:3])
 print(L[2:4])
+
+L2 = list(range(10))
+
+print(L2[-3:])
+
