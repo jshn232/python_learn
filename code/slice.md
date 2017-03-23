@@ -7,5 +7,5 @@
     print(L[2:4])
 
 
-    print(tuple(range(20))[:])    \#取全部
-    print(tuple(range(20))[2::3]) \#从第二个开始，每3个取一次
+    print(tuple(range(20))[:])    #取全部
+    print(tuple(range(20))[2::3]) #从第二个开始，每3个取一次
