@@ -19,6 +19,7 @@
     fun_Iterable(123)
     fun_Iterable((1,2,3,4))
     fun_Iterable('abc')
+    
     [参考代码](/code/Iteration.py)
 
 ## Iterator
