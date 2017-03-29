@@ -29,4 +29,32 @@
     
     可以使用`isinstance()`判断一个对象是否为`Iterator`对象
     
+    from collections import Iterator
+
+    def fun_Iterator(a):
+        print(a,'is Iterator ?',isinstance(a,Iterator))
+        return
+
+    fun_Iterator(123)
+    fun_Iterator([x*x for x in range(10)])
+    fun_Iterator((y+y for y in range(10)))
+    
+    生成器都是`Iterator`，但`list`,`dict`,`str`虽然是`Iterable`,却不是`Iterator`
+    把`Iterable`变成`Iterator`，可以使用`Iter()`函数
+    
+    `Iterator`的计算是惰性的，只有不断调用next()才能计算出下一个数据，而且无法提前知道序列的长度
+    `Iterator`甚至可以表示一个无限大的数据流，例如全体自然数。而使用`list`是无法表达全体自然数的
+    
+    `python`的`for`循环本质上就是通过不断的next()函数实现的，例如
+    for n in [1,2,3,4,5]
+        pass
+    等价于
+    i = iter([1,2,3,4,5])
+    
+    while True:
+        try:
+            next(i)
+        except StopIteration:
+        break
+        
     [参考代码](/code/Iteration.py)

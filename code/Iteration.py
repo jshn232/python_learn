@@ -26,3 +26,31 @@ fun_Iterable((x*x for x in range(10)))
 
 for key,value in enumerate(t):
     print(key,value)
+
+
+from collections import Iterator
+
+def fun_Iterator(a):
+    print(a,'is Iterator ?',isinstance(a,Iterator))
+    return
+
+fun_Iterator(123)
+fun_Iterator([x*x for x in range(10)])
+fun_Iterator((y+y for y in range(10)))
+fun_Iterator(iter([123]))
+fun_Iterator(iter('123'))
+
+
+for n in [1,2,3,4,5]:
+    print(n)
+
+i = iter([1,2,3,4,5])
+while True:
+    try:
+        for n in i:
+            print('now i is ',n)
+            print('next i')
+        next(i)
+
+    except StopIteration:
+        break
