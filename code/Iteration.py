@@ -21,6 +21,7 @@ def fun_Iterable(a):
 fun_Iterable(123)
 fun_Iterable((1,2,3,4))
 fun_Iterable('abc')
+fun_Iterable((x*x for x in range(10)))
 
 
 for key,value in enumerate(t):
