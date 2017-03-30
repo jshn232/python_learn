@@ -54,3 +54,6 @@ while True:
 
     except StopIteration:
         break
+
+for n in (x * x for x in range(1,101)):
+    print(n)
