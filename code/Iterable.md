@@ -24,6 +24,7 @@
 
 ## Iterator
 
+
     生成器不但可以作用于`for`循环，还可以被`next()`函数不断调用并返回下一个值直到抛出错误
     可以被`next()`函数调用并返回下一个对象的迭代器称为：`Iterator`
     
@@ -56,5 +57,5 @@
             next(i)
         except StopIteration:
         break
-        
-    [参考代码](./Iteration.py)
+
+   [参考代码](./Iteration.py)
