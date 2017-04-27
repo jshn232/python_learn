@@ -28,6 +28,7 @@ def isValue_2(n):
     return s == s[::-1]
 
 
+
 #两个函数对应的输出结果
 l = list(filter(isValue,range(1,1000)))
 l2 = list(filter(isValue_2,range(1,1000)))
