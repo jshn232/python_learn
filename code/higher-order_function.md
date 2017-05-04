@@ -6,6 +6,8 @@
     函数名即为指向函数的变量
     函数名也是变量
     
-   [参考文档](./map_reduce.md)
+   [map_reduce](./map_reduce.md)
     
-   [参考文档](./filter.md)
+   [filter](./filter.md)
+   
+   [sorted](./sorted.md)
