@@ -13,5 +13,7 @@ print('%d' % ('port1' in dict_d))
 d_port_password = {8989:'pass1',8990:'pass2'}
 print('port:%d,password:%s' % (8989,d_port_password[8989]))
 
+print(dict_d.keys())
+print(dict_d.values())
 
 s=set([1,2,3])
