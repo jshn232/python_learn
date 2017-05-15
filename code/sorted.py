@@ -29,3 +29,9 @@ def sort_values(t):
 
 #d1 = sorted(d,key=sort_key)
 #print(d1)
+
+if __name__ == '__main__':
+    i = 0
+    while(i<3):
+        i = i+1
+        print(__name__+"%d"%i)
