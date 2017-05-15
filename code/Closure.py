@@ -25,3 +25,14 @@ print(lazy_sum(1,2,3,4,5,6))
 
 f = lazy_sum(1,2,3,4,5,6)
 print(f())
+
+
+def fun_tuple(*t):
+    print(t)
+
+def fun_dict(**d):
+    print(d)
+
+fun_tuple(1,2,4,5,6)
+
+fun_dict(port_1=8989,port_2=8990,port_3=8991)
