@@ -26,6 +26,8 @@ print(lazy_sum(1,2,3,4,5,6))
 f = lazy_sum(1,2,3,4,5,6)
 print(f())
 
+f = lazy_sum()
+print(f())
 
 def fun_tuple(*t):
     print(t)
