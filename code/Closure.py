@@ -18,16 +18,17 @@ def lazy_sum(*args):
         return ss
     return sum_2
 
-print(lazy_sum)
 
-print(lazy_sum(1,2,3,4,5,6))
+print("lazy_sum:",lazy_sum)
+
+print("lazy_sum(1,2,3,4,5,6):",lazy_sum(1,2,3,4,5,6))
 
 
 f = lazy_sum(1,2,3,4,5,6)
-print(f())
+print("f():",f())
 
 f = lazy_sum()
-print(f())
+print("f():",f())
 
 def fun_tuple(*t):
     print(t)
