@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+import functools
+
 def log(fun):
+    @functools.wraps(fun)
     def wrapper(*args,**kw):
-        print('call %s()',fun.__name__)
+        print('call %s()' % fun.__name__)
         return fun(*args,**kw)
     return wrapper
 
@@ -12,10 +15,10 @@ def now():
 #等效于
 f = log(now)
 f()
-
+print('/////////////////')
 #now本身
 now()
-
+print('/////////////////')
 #now的name改变
 print('now._name_:',now.__name__)
 
