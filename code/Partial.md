@@ -1,0 +1,1 @@
+# Partial function(偏函数)

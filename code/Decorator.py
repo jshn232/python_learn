@@ -27,3 +27,23 @@ print('log._name_:',log.__name__)
 
 
 print('1000 == %04X'% 1000,'== %04d' % 1000)
+
+
+print('__name__is',__name__)
+
+
+
+print('///////////////')
+def log(fun):
+    @functools.wraps(fun)
+    def fo(*args,**kw):
+        print('log in')
+        fun(*args,**kw)
+        print('log out')
+    return fo
+
+@log
+def fooo(x):
+    print(x+1)
+
+fooo(4)
