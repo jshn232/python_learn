@@ -6,6 +6,7 @@ print('0x%x' % 1000)
 
 print('%s == 0x%x' % (h(1000),1000))
 
+print('0x64 to hec is %d' % 0x64)
 
 #定义函数
 
@@ -37,7 +38,7 @@ print(fun(*lll))
 
 print(fun())
 
-
+print('/////////////////////////////////////')
 #关键字参数
 def fun_key(key1,key2,key3='key3', **keys):
     print(key1,key2,key3,keys)
@@ -49,10 +50,11 @@ def fun_key(key1,key2,key3='key3', **keys):
     print('key_2 in keys is ',keys['key_2'])
     return
 
-fun_key(1,2,key_3='str_3',key_1='str_1',key_2='str_2')
+fun_key(1,2,key3='str_3',key_1='str_1',key_2='str_2')
 
-
+print('///////////////////////////////////')
 def fun_key_1(key1,key2,*,key3,key4):
+    print('fun_key_1')
     print(key1)
     print(key2)
     print(key3)
@@ -61,8 +63,9 @@ def fun_key_1(key1,key2,*,key3,key4):
 
 fun_key_1(1,2,key3=3,key4=4)
 
-
+print('/////////////////////////////////')
 def fun_key_2(*keys,key3,key4):
+    print('fun_key_2')
     print(keys)
     print(key3)
     print(key4)
@@ -71,7 +74,10 @@ def fun_key_2(*keys,key3,key4):
 l = [1,2,3,4,5]
 fun_key_2(l,key3=6,key4=7)
 
+print('////////////////////////////////')
+
 def fun_key_3(*,key3,key4,**keys):
+    print('fun_key_3')
     print(keys)
     print(key3)
     print(key4)
@@ -89,3 +95,9 @@ k1 = (1,2,3,4,5,6,7,8)
 k3 = (3,3,3,3,3)
 k2 = {'kk1':1,'kk2':2}
 fun_key_4(key1=k1,key2=k2)
+print('//////////////////////')
+fun_key_4(k1,key2=k2)
+
+
+if __name__ == '__main__':
+    print ('__main__')
