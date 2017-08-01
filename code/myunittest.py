@@ -17,13 +17,13 @@ class Dict(dict):
             raise AttributeError(r"'Dict' object has no attribute '%s'" % key)
 
 
-d = Dict(a=1,b=2)
+#d = Dict(a=1,b=2)
 
-print('a=',d.a)
+#print('a=',d.a)
 
-d.b=3
+#d.b=3
 
-print('b=',d.b)
+#print('b=',d.b)
 
 
 
@@ -32,10 +32,11 @@ class TestDict(unittest.TestCase):
     def test_init(self):
         d = Dict(a=2,b=4)
         self.assertEqual(d.a,2)
+        self.assertEqual(d.b,4)
 
     def test_key(self):
         d = Dict()
-        d['Key'] = 'value'
+        d['key'] = 'value'
         self.assertEqual(d.key,'value')
 
     def test_attr(self):
@@ -56,6 +57,6 @@ class TestDict(unittest.TestCase):
 
 
 
-if __name__ == '__main__':
-    unittest.main()
+#if __name__ == '__main__':
+#    unittest.main()
 
