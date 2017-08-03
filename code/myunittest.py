@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import unittest
+import doctest
 
 class Dict(dict):
-
     def __init__(self,**kw):
         super().__init__(**kw)
 
@@ -35,7 +35,7 @@ class TestDict(unittest.TestCase):
 
     def test_key(self):
         d = Dict()
-        d['Key'] = 'value'
+        d['key'] = 'value'
         self.assertEqual(d.key,'value')
 
     def test_attr(self):
@@ -55,7 +55,7 @@ class TestDict(unittest.TestCase):
             value = d.empty
 
 
-
 if __name__ == '__main__':
     unittest.main()
+
 
