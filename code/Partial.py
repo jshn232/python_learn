@@ -17,4 +17,3 @@ int2 = functools.partial(int,base=16)
 i2 = int2('0x1000')
 
 print(i2)
-
