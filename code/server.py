@@ -1,28 +1,38 @@
 #!/usr/bin/env python3
 
-import socket
+import socket,threading,time,datetime
 
-HOST = '127.0.0.1'
-PORT = 8989
+s = socket.socket(family=socket.AF_INET,type=socket.SOCK_STREAM)
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-s.bind((HOST,PORT))
+ip = '127.0.0.1'
+port = 6666
+add = (ip,port)
+s.bind(add)
 
 s.listen(5)
+print('listening....')
 
-print('Server start at:%s:%s' %(HOST,PORT))
-
-print('wait for connection.....')
-
-while True:
-    conn,addr = s.accept()
-    print('Connect by',addr)
+def tcplink(sock,addr):
+    print('socket accept form %s %s' %addr)
 
     while True:
-        date = conn.recv(1024).decode(encoding='utf_8', errors='strict')
-        print(date)
+        date = sock.recv(1024)
+        #time.sleep(1)
+        if not date:
+            break
+        print('>>>>>>' , date.decode('utf-8').encode('utf-8'))
+        #sock.send(('recv').encode('utf-8'))
+        t = time.time()
+        t = int(round(t*1000))
+        time.sleep(0.001)
+        sock.send(('%s'%t).encode('utf-8'))
+    sock.close()
+    print('connect close from %s %s'%addr)
 
-        date = 'recv date'
-        conn.send(date.encode(encoding='utf_8', errors='strict'))
 
+while True:
+    sock, addr = s.accept()
+
+    t = threading.Thread(target=tcplink, args=(sock,addr))
+
+    t.start()

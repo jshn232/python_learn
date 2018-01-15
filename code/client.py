@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-import socket
+import socket,time,datetime
 
 HOST = '127.0.0.1'
-PORT = 8989
+PORT = 6666
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -17,4 +17,7 @@ while True:
 
     data = s.recv(1024).decode(encoding='utf_8', errors='strict')
 
-    print(data)
+    t = time.time()
+    print('now',int(round(t*1000)))
+
+    print('>>>',data)
