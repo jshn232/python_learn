@@ -4,11 +4,13 @@ import socket,threading,time,datetime,select
 
 lt_socket = []
 lt_port = []
+lt_time_wait = [10,60,10,10,10]
 
 addr_local = '127.0.0.1'
 
 Max_Socket_Num = 5
 Define_Port = 6000
+
 
 for i in range(Max_Socket_Num):
     s_Tmp = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -16,6 +18,7 @@ for i in range(Max_Socket_Num):
     lt_port.append(Define_Port + i)
     lt_socket[i].bind((addr_local,lt_port[i]))
     print('socket_%s ip:%s,port:%s'%(i,addr_local,lt_port[i]))
+    print('socket time wait is %ss'%lt_time_wait[i])
 
 def writefile(buf,no):
     with open('/Users/jshn/Desktop/%s'%(Define_Port+no),'a') as f:
@@ -32,17 +35,17 @@ def tcplink(sock,no):
         s.close()
         return
     print('accept port %s'%(Define_Port+no))
-    writefile('accept',no)
+    writefile('accept,Wait %ss' % lt_time_wait[no], no)
     #oldtime = datetime.datetime.now()
     s.setblocking(0)
 
     while True:
         try:
-            ready = select.select([s], [], [], 10)
+            ready = select.select([s], [], [], lt_time_wait[no])
             if ready[0]:
                 date = s.recv(256)
             else:
-                writefile('No Recv Date in 10s', no)
+                writefile('No Recv Date in %ss'%lt_time_wait[no], no)
                 continue
             if not date:
                 s.close()
